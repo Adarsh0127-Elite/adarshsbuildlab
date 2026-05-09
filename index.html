@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADARSH BUILD LAB | Premium AOSP Experience</title>
+    <meta name="description" content="State-of-the-art AOSP development and device lab. Explore LunarisAOSP, technical engineering, and device builds.">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.91/build/spline-viewer.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="canvas3d-container">
+        <spline-viewer url="https://prod.spline.design/3dspotifyapplevisionprodesigniyyappanar-tRefJHjBsOnuznvCruQRhqje/scene.splinecode"></spline-viewer>
+    </div>
+
+    <div class="overlay">
+        <nav class="reveal">
+            <div class="logo">Adarsh <span>Build Lab</span></div>
+            <div class="nav-links">
+                <a href="#" id="innovation-link">Innovation</a>
+                <a href="#devices">Devices</a>
+                <a href="https://github.com/Adarsh0127-Elite" target="_blank">GitHub</a>
+            </div>
+        </nav>
+
+        <main class="hero">
+            <h1 class="reveal">The Future of<br>Open Source.</h1>
+            <p class="reveal">Welcome to the Adarsh Build Lab. We specialize in high-performance AOSP builds, custom kernels, and system-level engineering for the next generation of mobile devices.</p>
+            
+            <div class="download-hub reveal">
+                <div class="device-selector">
+                    <select id="device-list">
+                        <option value="" disabled selected>Select your device</option>
+                        <option value="https://sourceforge.net/projects/adarsh8300u/files/AOSP_Duchamp/">Poco X6 Pro 5G (duchamp)</option>
+                        <option value="https://sourceforge.net/projects/adarsh8300u/files/AOSP_zephyr/">Realme GT Neo 3 / Oneplus 10R (zephyr)</option>
+                        <option value="https://sourceforge.net/projects/adarsh8300u/files/AOSP_vitamin/">Oneplus Nord 3 (vitamin)</option>
+                    </select>
+                    <button id="download-btn" class="btn-download">Initiate Download</button>
+                </div>
+            </div>
+        </main>
+
+        <h2 id="devices" class="section-title reveal">Maintained <span>Devices</span></h2>
+        
+        <div class="device-grid">
+            <!-- Poco X6 Pro -->
+            <div class="device-card reveal" 
+                 data-name="Poco X6 Pro 5G" 
+                 data-codename="duchamp"
+                 data-cpu="Dimensity 8300 Ultra (4nm)"
+                 data-cores="1x 3.35GHz + 3x 3.2GHz + 4x 2.2GHz"
+                 data-clock="Up to 3.35 GHz"
+                 data-gpu="Mali-G615 MC6 @ 1400MHz"
+                 data-screen="1.5K Flow AMOLED, 120Hz"
+                 data-battery="5000mAh | 67W Turbo"
+                 data-camera="64MP OIS + 8MP + 2MP">
+                <h3>Poco X6 Pro 5G</h3>
+                <span class="codename">duchamp</span>
+                <span class="status">Unofficial</span>
+                <p class="card-hint">Tap for Hardware Details</p>
+            </div>
+
+            <!-- Realme / Oneplus -->
+            <div class="device-card reveal" 
+                 data-name="Realme GT Neo 3 / Oneplus 10R" 
+                 data-codename="zephyr"
+                 data-cpu="Dimensity 8100 (5nm)"
+                 data-cores="4x 2.85GHz + 4x 2.0GHz"
+                 data-clock="Up to 2.85 GHz"
+                 data-gpu="Mali-G610 MC6 @ 850MHz"
+                 data-screen="FHD+ AMOLED, 120Hz"
+                 data-battery="5000mAh | 80W/150W SuperDart"
+                 data-camera="50MP IMX766 OIS + 8MP + 2MP">
+                <h3>GT Neo 3 / 10R 5G</h3>
+                <span class="codename">zephyr</span>
+                <span class="status">Unofficial</span>
+                <p class="card-hint">Tap for Hardware Details</p>
+            </div>
+
+            <!-- Oneplus Nord 3 -->
+            <div class="device-card reveal" 
+                 data-name="Oneplus Nord 3 5G" 
+                 data-codename="vitamin"
+                 data-cpu="Dimensity 9000 (4nm)"
+                 data-cores="1x 3.05GHz + 3x 2.85GHz + 4x 1.8GHz"
+                 data-clock="Up to 3.05 GHz"
+                 data-gpu="Mali-G710 MC10 @ 850MHz"
+                 data-screen="1.5K Fluid AMOLED, 120Hz"
+                 data-battery="5000mAh | 80W SuperVOOC"
+                 data-camera="50MP IMX890 OIS + 8MP + 2MP">
+                <h3>Oneplus Nord 3 5G</h3>
+                <span class="codename">vitamin</span>
+                <span class="status">Unofficial</span>
+                <p class="card-hint">Tap for Hardware Details</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Device Details Modal -->
+    <div id="device-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-device">&times;</span>
+            <h2 id="modal-device-name" style="margin-bottom: 0.5rem;">Device Name</h2>
+            <p id="modal-device-codename" style="color: var(--primary-color); font-weight: 600; margin-bottom: 2rem;">codename</p>
+            <div class="specs-list" id="modal-specs-list">
+                <!-- Specs injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Innovation Hub Modal -->
+    <div id="advantages-modal" class="modal">
+        <div class="modal-content innovation-hub">
+            <span class="close-btn" id="close-advantages">&times;</span>
+            <aside class="modal-nav">
+                <h3>Innovation <span>Hub</span></h3>
+                <ul>
+                    <li style="opacity: 0.3; font-size: 0.7rem; text-transform: uppercase;">Custom ROM 101</li>
+                    <li><a href="#pillar-1">I. Anatomy of a ROM</a></li>
+                    <li><a href="#pillar-2">II. Core Benefits</a></li>
+                    <li><a href="#pillar-3">III. Risks & Drawbacks</a></li>
+                    <li><a href="#pillar-4">IV. Key Terminology</a></li>
+                </ul>
+            </aside>
+            <div class="hub-content">
+                <section id="pillar-1" class="hub-section">
+                    <h2>Anatomy of a Custom ROM</h2>
+                    <p>To understand custom ROMs, you need to understand what gets replaced when you install one:</p>
+                    <ul class="feature-list">
+                        <li><strong>System Partition (/system):</strong> The core OS, containing the Android framework, system apps, and the UI.</li>
+                        <li><strong>Vendor Partition (/vendor):</strong> Proprietary drivers (blobs) for specific hardware (camera, Wi-Fi, BT).</li>
+                        <li><strong>Kernel (/boot):</strong> The bridge between hardware and software. We use heavily optimized custom kernels.</li>
+                    </ul>
+                </section>
+
+                <section id="pillar-2" class="hub-section">
+                    <h2>Core Benefits</h2>
+                    <div class="sub-section">
+                        <h4>Performance & Optimization</h4>
+                        <p>Debloating removes unremovable carrier apps, freeing up RAM and CPU cycles. Under-the-hood tweaks to memory management and I/O schedulers make the UI feel significantly snappier.</p>
+                    </div>
+                    <div class="sub-section">
+                        <h4>Extreme Customization</h4>
+                        <p>Change system accent colors, icon shapes, and status bar layouts. Remap physical buttons to skip tracks or trigger specific system actions.</p>
+                    </div>
+                    <div class="sub-section">
+                        <h4>Privacy & Security</h4>
+                        <p>Run free of GMS using <strong>microG</strong>. Feed fake data to intrusive apps and utilize signature spoofing for a truly private experience.</p>
+                    </div>
+                </section>
+
+                <section id="pillar-3" class="hub-section">
+                    <h2>Risks & Drawbacks</h2>
+                    <p>Installation carries risks like <strong>Bricking</strong> if processes are interrupted. Unlocking the bootloader voids warranties and may trip hardware security fuses like Samsung's Knox.</p>
+                    <p>Software-wise, you might see <strong>Camera Degradation</strong> due to missing proprietary algorithms, or issues with <strong>SafetyNet</strong> affecting banking apps and Google Wallet.</p>
+                </section>
+
+                <section id="pillar-4" class="hub-section">
+                    <h2>Key Terminology</h2>
+                    <ul class="feature-list">
+                        <li><strong>Bootloader:</strong> The program that runs before Android starts. Must be unlocked first.</li>
+                        <li><strong>Custom Recovery:</strong> (TWRP/OrangeFox) Allows system backups and flashing .zip files.</li>
+                        <li><strong>GApps:</strong> Proprietary Google apps that must be flashed separately in AOSP-based ROMs.</li>
+                        <li><strong>Device Tree:</strong> Specific configurations required to make source code run on a specific model.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
